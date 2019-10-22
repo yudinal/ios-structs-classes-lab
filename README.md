@@ -20,13 +20,24 @@ let fred = Giant()
 Will these three lines of code run? If not, why not?
 
 ```swift
-fred.name = "Brick"
-fred.weight = 999.2
-fred.homePlanet = "Mars"
+fred.name = "Brick" - Yes 
+fred.weight = 999.2 - Yes
+fred.homePlanet = "Mars" - this line of code doesn't run because homePlanet is a constant
 ```
 
 Fix the class definition for `Giant` in the space below so that it **does** work:
+```
+class Giant {
+ var name: String = "Fred"
+ var weight: Double = 340.0
+ var homePlanet: String = "Earth"
+}
 
+let fred = Giant()
+
+fred.homePlanet = "Mars"
+
+```
 
 ## Question 2
 
@@ -44,13 +55,25 @@ let bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus")
 Will these three lines of code run? If so, why not?
 
 ```swift
-bilbo.name = "Jake"
-bilbo.height = 1.42
-bilbo.homePlanet = "Saturn"
+bilbo.name = "Jake" - line doesn't run because bilbo is assigned to a constant let
+bilbo.height = 1.42 - line doesn't run because bilbo is assigned to a constant let
+bilbo.homePlanet = "Saturn" - line doesn't run because bilbo is assigned to a constant let
 ```
 
 Change the declaration of `bilbo` so that the above three lines of code **do** work:
+```
+struct Alien {
+ var name: String
+ var height: Double
+ var homePlanet: String
+}
+var bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus")
 
+bilbo.name = "Jake"
+bilbo.height = 1.42
+bilbo.homePlanet = "Saturn"
+
+```
 
 ## Question 3
 
@@ -64,6 +87,11 @@ jason.name = "Jason"
 ```
 
 What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
+```
+The value of edgar.name will be edgar after the first three lines of code are run because the new value "Jason" hasn't been assigned yet.
+The value of jason.name will be Jason because the new value "Jason" has been assigned.
+ 
+```
 
 
 ## Question 4
@@ -77,6 +105,10 @@ charlesFromJupiter.homePlanet = "Jupiter"
 ```
 
 What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
+```
+charles.homePlanet will print "Pluto" because charles value hasn't been reassigned
+charlesFromJupiter will print Jupiter because charles is a variable and its value can get reassigned
+```
 
 
 ## Question 5
